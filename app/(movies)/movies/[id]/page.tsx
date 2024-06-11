@@ -1,11 +1,12 @@
-import { BASE_URL } from "../../../helper/baseUrl";
+import MovieInfo from "../../../../components/movie-info";
+import { BASE_URL } from "../../../../helper/baseUrl";
 
 async function getMovieInfos(id: number) {
-  return await fetch(`${BASE_URL}/movies/${id}`);
+  return await fetch(`${BASE_URL}/${id}`);
 }
 
 async function getMovieVideo(id: number) {
-  return await fetch(`${BASE_URL}/movies/${id}/videos`);
+  return await fetch(`${BASE_URL}/${id}/videos`);
 }
 
 export default async function Posts({
@@ -23,9 +24,7 @@ export default async function Posts({
 
   return (
     <div>
-      <h1>{moviesJson.title}</h1>
-      <img src={moviesJson.poster_path}></img>
-      <video src={videoJson.videoUrl} controls></video>
+      <MovieInfo id={id} />
     </div>
   );
 }

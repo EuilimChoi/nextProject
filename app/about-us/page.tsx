@@ -1,4 +1,4 @@
-import Navigation from "../../components/navagation";
+import Navigation from "../../components/navigation";
 
 export default function AboutUs() {
   return (
